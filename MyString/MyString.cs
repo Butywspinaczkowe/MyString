@@ -106,5 +106,12 @@ namespace CP
 
             return upperedArray;
         }
+
+        public char[] Reverse()
+        {
+            MyString reversedArray = new MyString(CharArray);
+            Array.Reverse(reversedArray.CharArray);
+            return reversedArray.CharArray;
+        }
     }
 }
