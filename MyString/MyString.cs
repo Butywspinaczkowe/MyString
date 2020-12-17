@@ -12,13 +12,22 @@ namespace CP
 
         public char[] CharArray { get; set; }
 
+        public char this[int i]
+        {
+            get => CharArray[i];
+            set => CharArray[i] = value;
+        }
+
+
         public int Length
         {
             get { return LengthGetter(); }
         }
 
         public MyString()
-        { }
+        {
+            CharArray = new char[0];
+        }
 
         public MyString(char[] inputArray)
         {
@@ -43,6 +52,17 @@ namespace CP
         public void Write()
         {
             Console.Write(CharArray);
+        }
+
+        public static MyString operator + (MyString MyStringA, MyString MyStringB)
+        {
+            char[] temp = new char[MyStringA.Length + MyStringB.Length];
+            MyString concatMyString = new MyString(temp);
+
+            Array.Copy(MyStringA.CharArray, concatMyString.CharArray, MyStringA.Length);
+            Array.Copy(MyStringB.CharArray, 0, concatMyString.CharArray, MyStringA.Length, MyStringB.Length);
+
+            return concatMyString;
         }
 
     }
