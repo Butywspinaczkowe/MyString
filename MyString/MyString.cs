@@ -31,7 +31,13 @@ namespace CP
 
         public MyString(char[] inputArray)
         {
-            CharArray = inputArray;
+            CharArray = new char[inputArray.Length];
+            int i = 0;
+            foreach (char character in inputArray)
+            {
+                CharArray[i] = character;
+                i++;
+            }
         }
 
         public MyString(char character)
@@ -70,11 +76,21 @@ namespace CP
         {
             return CharArray;
         }
-        /*
-        public char[] ToLower()
+        
+        public MyString ToLower()
         {
-            
+            MyString loweredArray = new MyString(CharArray);
+
+            int i = 0;
+
+            foreach (char character in CharArray)
+            {
+                loweredArray.CharArray[i] = Char.ToLower(loweredArray.CharArray[i]);
+                i++;
+            }
+
+            return loweredArray;
         }
-        */
+        
     }
 }
