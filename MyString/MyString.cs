@@ -36,6 +36,7 @@ namespace CP
 
         public MyString(char character)
         {
+            CharArray = new char[1];
             CharArray[0] = character;
         }
 
@@ -65,5 +66,9 @@ namespace CP
             return concatMyString;
         }
 
+       /* public static void ToLower()
+        {
+            MyString.CharArray
+        }*/
     }
 }
