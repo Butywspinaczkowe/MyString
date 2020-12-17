@@ -55,7 +55,7 @@ namespace CP
             Console.Write(CharArray);
         }
 
-        public static MyString operator + (MyString MyStringA, MyString MyStringB)
+        public static MyString operator +(MyString MyStringA, MyString MyStringB)
         {
             char[] temp = new char[MyStringA.Length + MyStringB.Length];
             MyString concatMyString = new MyString(temp);
@@ -66,9 +66,15 @@ namespace CP
             return concatMyString;
         }
 
-       /* public static void ToLower()
+        public char [] ToCharArray()
         {
-            MyString.CharArray
-        }*/
+            return CharArray;
+        }
+        /*
+        public char[] ToLower()
+        {
+            
+        }
+        */
     }
 }
