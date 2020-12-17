@@ -85,12 +85,26 @@ namespace CP
 
             foreach (char character in CharArray)
             {
-                loweredArray.CharArray[i] = Char.ToLower(loweredArray.CharArray[i]);
+                loweredArray.CharArray[i] = Char.ToLower(character);
                 i++;
             }
 
             return loweredArray;
         }
-        
+
+        public MyString ToUpper()
+        {
+            MyString upperedArray = new MyString(CharArray);
+
+            int i = 0;
+
+            foreach (char character in CharArray)
+            {
+                upperedArray.CharArray[i] = Char.ToUpper(character);
+                i++;
+            }
+
+            return upperedArray;
+        }
     }
 }
