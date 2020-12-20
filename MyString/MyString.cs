@@ -107,6 +107,76 @@ namespace CP
             return upperedArray;
         }
 
+        public bool Equals(MyString comparedString)
+        {
+            if (Length == comparedString.Length)
+                for (int i = 0; i < comparedString.Length; i++)
+                {
+                    if (CharArray[i] != comparedString.CharArray[i])
+                        break;
+
+                    return true;
+                }
+            return false;
+        }
+
+        public static bool operator ==(MyString MyStringA, MyString MyStringB)
+        {
+
+            if (MyStringA.Length == MyStringB.Length)
+                for (int i = 0; i < MyStringA.Length; i++)
+                {
+                    if (MyStringA.CharArray[i] != MyStringB.CharArray[i])
+                        break;
+
+                    return true;
+                }
+            return false;
+        }
+
+        public static bool operator !=(MyString MyStringA, MyString MyStringB)
+        {
+            return !(MyStringA == MyStringB);
+        }
+
+        public static bool operator <(MyString MyStringA, MyString MyStringB)
+        {
+
+            if (MyStringA.Length < MyStringB.Length)
+                for (int i = 0; i < MyStringA.Length; i++)
+                {
+                    if (MyStringA.CharArray[i] >= MyStringB.CharArray[i])
+                        break;
+
+                    return true;
+                }
+            return false;
+        }
+
+        public static bool operator >=(MyString MyStringA, MyString MyStringB)
+        {
+            return !(MyStringA < MyStringB);
+        }
+
+        public static bool operator >(MyString MyStringA, MyString MyStringB)
+        {
+
+            if (MyStringA.Length > MyStringB.Length)
+                for (int i = 0; i < MyStringA.Length; i++)
+                {
+                    if (MyStringA.CharArray[i] <= MyStringB.CharArray[i])
+                        break;
+
+                    return true;
+                }
+            return false;
+        }
+
+        public static bool operator <=(MyString MyStringA, MyString MyStringB)
+        {
+            return !(MyStringA > MyStringB);
+        }
+
         public char[] Reverse()
         {
             MyString reversedArray = new MyString(CharArray);
